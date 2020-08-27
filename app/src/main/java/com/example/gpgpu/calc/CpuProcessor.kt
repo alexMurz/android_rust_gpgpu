@@ -1,7 +1,10 @@
 package com.example.gpgpu.calc
 
 import kotlinx.coroutines.*
+import java.util.stream.StreamSupport
+import kotlin.math.cos
 import kotlin.math.min
+import kotlin.math.sin
 
 
 class CpuProcessor(capacity: Int): Processor {
@@ -21,9 +24,9 @@ class CpuProcessor(capacity: Int): Processor {
 
     override fun run(range: IntRange): Processor.Future {
         return Future(range, GlobalScope.launch {
-            for (i in range) {
-                val v = buff[i]
-                buff[i] = v * v
+            StreamSupport.stream(range.spliterator(), true).forEach {
+                val v = buff[it]
+                buff[it] = 2.0f* sin(v) - cos(2.0f*v)
             }
         })
     }

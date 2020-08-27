@@ -32,7 +32,7 @@ interface Processor {
 
     companion object {
         fun new(capacity: Int): Processor {
-            return CpuProcessor(capacity)
+            return GpuProcessor.new(capacity) ?: CpuProcessor(capacity)
         }
     }
 

@@ -41,11 +41,6 @@ class GpuProcessor private constructor(private val ctx: Long): Processor {
 
 @Suppress("FunctionName")
 private object Rust {
-    // Load library
-    init {
-//            System.loadLibrary("rust") // System.mapLibraryName("rust"))
-//        System.load("/home/alexmurz/Documents/code/simd_bench/rust/target/debug/librust.so") // System.mapLibraryName("rust"))
-    }
 
     /**
      * Create new GpuContext
