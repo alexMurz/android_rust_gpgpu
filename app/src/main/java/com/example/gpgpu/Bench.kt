@@ -1,87 +1,86 @@
 package com.example.gpgpu
 
+import com.example.gpgpu.calc.CpuProcessor
+import com.example.gpgpu.calc.GpuProcessor
+import com.example.gpgpu.calc.Processor
+import java.util.stream.StreamSupport
+import kotlin.math.absoluteValue
+import kotlin.math.cos
+import kotlin.math.sin
 import kotlin.system.measureNanoTime
+import kotlin.time.measureTime
 
 /// Utils object to help benching
 object Bench {
-    const val N = 100
+    // Simulate doing something to 1080p image
+    val N = 3 * 1920 * 1080
+    // I iterations
+    val I = 5
 
-    class Scope {
-        var total = 0L // ns
-        fun reset() { total = 0 }
-        inline fun ignore(f: () -> Unit) { f() }
-        inline fun measure(f: () -> Unit) { total += measureNanoTime(f) }
-    }
 
-    class Timer(capacity: Int) {
-        val scope = Scope()
-        private val data = LongArray(capacity)
-        private var count = 0
+    @Suppress("NAME_SHADOWING")
+    private fun doWith(makeProcessor: () -> Processor, data: FloatArray, cmp: FloatArray, prefix: String, log: (String) -> Unit) {
 
-        fun add(t: Long) {
-            data[count] = t
-            count++
+        val result = FloatArray(N) { 0.0f }
+        val createTime: Long
+        val disposeTime: Long
+        val computeTime: Long
+        var uploadTime: Long
+        var downloadTime: Long
+        val time = measureNanoTime {
+            val ctx: Processor
+            createTime = measureNanoTime {
+                ctx = makeProcessor()
+            }
+
+            uploadTime = measureNanoTime { ctx.upload(data) }
+            computeTime = measureNanoTime {
+                repeat(I) { ctx.run(0 until N).flush() }
+            }
+            downloadTime = measureNanoTime { ctx.download(result) }
+            disposeTime = measureNanoTime { ctx.dispose() }
         }
 
-        inline fun dispatch(f: Scope.() -> Unit) {
-            scope.reset()
-            f(scope)
-            add(scope.total)
+        for (i in data.indices) {
+            val cmp = cmp[i]
+            val result = result[i]
+            val delta = (cmp - result).absoluteValue
+            // Error stacking up when using iterative float modification, hence delta window is huge
+            assert(delta < 0.1) { println("Incorrect values at i = $i ($result != $cmp)") }
         }
 
-        fun finish(percentile: Float) = Result(data, percentile)
+        log("$prefix time ${time.toFloat() / 1e6f}ms (Full Chain)")
+        log("$prefix time ${createTime.toFloat() / 1e6f}ms (Create)")
+        log("$prefix time ${uploadTime.toFloat() / 1e6f}ms (Upload) <- Important")
+        log("$prefix time ${computeTime.toFloat() / 1e6f}ms (Compute) <- Important")
+        log("$prefix time ${downloadTime.toFloat() / 1e6f}ms (Download) <- Important")
+        log("$prefix time ${disposeTime.toFloat() / 1e6f}ms (Dispose)")
     }
 
-    class Result(data: LongArray, percentile: Float) {
-        init { data.sort() }
+    fun perform(libLoad: () -> Unit, log: (String) -> Unit) {
 
-        /// total - ignore percentile
-        val totalAverage: Long = data.average().toLong()
-        val totalBest: Long = data.firstOrNull() ?: 0
-        val totalWorst: Long = data.lastOrNull() ?: 0
-        val totalDistribution: Long = (totalBest - totalWorst) / 2
-        val totalMedian: Long = totalDistribution + totalBest
+        val data = FloatArray(N) { Math.random().toFloat() }
+        val rawResult = data.clone()
 
-        val average: Long
-        val best: Long
-        val worst: Long
-        val distribution: Long
-        val median: Long
-
-        init {
-            val lowIdx = (percentile * data.size).toInt()
-            val hiIdx = ((1.0 - percentile) * data.size).toInt()
-            val slice = data.slice(lowIdx .. hiIdx)
-
-            average = slice.average().toLong()
-            best = slice.firstOrNull() ?: 0
-            worst = slice.lastOrNull() ?: 0
-            distribution = (worst - best) / 2
-            median = distribution + best
+        val rawTime = measureNanoTime {
+            repeat(I) {
+                StreamSupport.stream(rawResult.indices.spliterator(), true).forEach {
+                    val v = rawResult[it]
+                    rawResult[it] = 2.0f* sin(v) - cos(2.0f*v)
+                }
+            }
         }
+        log("Raw time ${rawTime.toFloat() / 1e6f}ms")
+
+        log("----------")
+        doWith({ CpuProcessor(N) }, data, rawResult, "CPU", log)
+
+        // Load native library
+        libLoad()
+
+        log("----------")
+        doWith({ GpuProcessor.new(N)!! }, data, rawResult, "GPU", log)
 
     }
 
-    inline fun measure(flag: String? = null, percentile: Float = 0.5f, sampleCount: Int = N, log: Boolean = true, f: Scope.() -> Unit): Result {
-        assert(percentile > 0 && percentile <= 1.0)
-
-        val timer = Timer(sampleCount)
-        for (i in 0 until sampleCount) timer.dispatch(f)
-        val result = timer.finish(percentile / 2.0f)
-
-        if (log) {
-            val trace = Thread.currentThread().stackTrace
-            println(
-                "${trace[1].className}.${trace[1].methodName} - Bench ${flag ?: ""} " +
-                        "measured ${result.average}ns " +
-                        "(+- ${result.distribution}ns) " +
-                        "Best: ${result.best}ns, " +
-                        "Worst ${result.worst}ns, " +
-                        "Abs Best: ${result.totalBest}ns, " +
-                        "Abs Worst: ${result.totalWorst}ns"
-            )
-        }
-
-        return result
-    }
 }
