@@ -1,0 +1,9 @@
+cargo:warning=Checking for system installed libraries.  Use --features = build-from-source to disable this behavior
+cargo:rustc-link-search=native=/usr/lib
+cargo:warning=Found and linking system installed Glslang and SPIRV-Tools libraries.
+cargo:rustc-link-lib=dylib=glslang
+cargo:rustc-link-lib=dylib=SPIRV
+cargo:rustc-link-lib=dylib=SPIRV-Tools
+cargo:rustc-link-lib=dylib=SPIRV-Tools-opt
+cargo:rustc-link-lib=static=shaderc_combined
+cargo:rustc-link-lib=dylib=stdc++

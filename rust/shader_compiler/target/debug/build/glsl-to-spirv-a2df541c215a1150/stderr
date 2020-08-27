@@ -1,0 +1,47 @@
+fatal: not a git repository (or any of the parent directories): .git
+CMake Warning (dev) at /usr/share/cmake-3.17/Modules/GNUInstallDirs.cmake:225 (message):
+  Unable to determine default CMAKE_INSTALL_LIBDIR directory because no
+  target architecture is known.  Please enable at least one language before
+  including GNUInstallDirs.
+Call Stack (most recent call first):
+  CMakeLists.txt:7 (include)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_ASM_COMPILER
+    CMAKE_ASM_FLAGS
+
+
+In file included from /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/glsl-to-spirv-0.1.7/glslang/SPIRV/hex_float.h:39,
+                 from /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/glsl-to-spirv-0.1.7/glslang/SPIRV/SpvBuilder.cpp:50:
+/home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/glsl-to-spirv-0.1.7/glslang/SPIRV/bitutils.h: In instantiation of 'Dest spvutils::BitwiseCast(Src) [with Dest = spvutils::Float16; Src = short unsigned int]':
+/home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/glsl-to-spirv-0.1.7/glslang/SPIRV/hex_float.h:138:47:   required from 'T spvutils::FloatProxy<T>::getAsFloat() const [with T = spvutils::Float16]'
+/home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/glsl-to-spirv-0.1.7/glslang/SPIRV/hex_float.h:821:52:   required from here
+/home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/glsl-to-spirv-0.1.7/glslang/SPIRV/bitutils.h:29:14: warning: 'void* memcpy(void*, const void*, size_t)' writing to an object of non-trivially copyable type 'class spvutils::Float16'; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
+   29 |   std::memcpy(&dest, &source, sizeof(dest));
+      |   ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/glsl-to-spirv-0.1.7/glslang/SPIRV/SpvBuilder.cpp:50:
+/home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/glsl-to-spirv-0.1.7/glslang/SPIRV/hex_float.h:43:7: note: 'class spvutils::Float16' declared here
+   43 | class Float16 {
+      |       ^~~~~~~
+In file included from /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/glsl-to-spirv-0.1.7/glslang/SPIRV/hex_float.h:39,
+                 from /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/glsl-to-spirv-0.1.7/glslang/SPIRV/SpvBuilder.cpp:50:
+/home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/glsl-to-spirv-0.1.7/glslang/SPIRV/bitutils.h: In instantiation of 'Dest spvutils::BitwiseCast(Src) [with Dest = spvutils::FloatProxy<spvutils::Float16>; Src = short unsigned int]':
+/home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/glsl-to-spirv-0.1.7/glslang/SPIRV/hex_float.h:431:28:   required from 'void spvutils::HexFloat<T, Traits>::setFromSignUnbiasedExponentAndNormalizedSignificand(bool, spvutils::HexFloat<T, Traits>::int_type, spvutils::HexFloat<T, Traits>::uint_type, bool) [with T = spvutils::FloatProxy<spvutils::Float16>; Traits = spvutils::HexFloatTraits<spvutils::FloatProxy<spvutils::Float16> >; spvutils::HexFloat<T, Traits>::int_type = short int; spvutils::HexFloat<T, Traits>::uint_type = short unsigned int]'
+/home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/glsl-to-spirv-0.1.7/glslang/SPIRV/hex_float.h:633:62:   required from 'void spvutils::HexFloat<T, Traits>::castTo(other_T&, spvutils::round_direction) [with other_T = spvutils::HexFloat<spvutils::FloatProxy<spvutils::Float16>, spvutils::HexFloatTraits<spvutils::FloatProxy<spvutils::Float16> > >; T = spvutils::FloatProxy<float>; Traits = spvutils::HexFloatTraits<spvutils::FloatProxy<float> >]'
+/home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/glsl-to-spirv-0.1.7/glslang/SPIRV/hex_float.h:817:39:   required from here
+/home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/glsl-to-spirv-0.1.7/glslang/SPIRV/bitutils.h:29:14: warning: 'void* memcpy(void*, const void*, size_t)' copying an object of non-trivial type 'class spvutils::FloatProxy<spvutils::Float16>' from an array of 'short unsigned int' [-Wclass-memaccess]
+   29 |   std::memcpy(&dest, &source, sizeof(dest));
+      |   ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/glsl-to-spirv-0.1.7/glslang/SPIRV/SpvBuilder.cpp:50:
+/home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/glsl-to-spirv-0.1.7/glslang/SPIRV/hex_float.h:115:7: note: 'class spvutils::FloatProxy<spvutils::Float16>' declared here
+  115 | class FloatProxy {
+      |       ^~~~~~~~~~
+/home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/glsl-to-spirv-0.1.7/glslang/StandAlone/StandAlone.cpp: In member function 'void TPreamble::addDef(std::string)':
+/home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/glsl-to-spirv-0.1.7/glslang/StandAlone/StandAlone.cpp:177:19: warning: comparison of integer expressions of different signedness: 'int' and 'const size_type' {aka 'const long unsigned int'} [-Wsign-compare]
+  177 |         if (equal != def.npos)
+/home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/glsl-to-spirv-0.1.7/glslang/StandAlone/StandAlone.cpp: In member function 'void TPreamble::fixLine(std::string&)':
+/home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/glsl-to-spirv-0.1.7/glslang/StandAlone/StandAlone.cpp:198:17: warning: comparison of integer expressions of different signedness: 'int' and 'const size_type' {aka 'const long unsigned int'} [-Wsign-compare]
+  198 |         if (end != line.npos)

@@ -1,0 +1,11 @@
+/home/alexmurz/Documents/code/lib/rust/game_engine/shader_compiler/target/debug/deps/proc_macro2-1b302864f2364734.rmeta: /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.19/src/lib.rs /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.19/src/parse.rs /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.19/src/detection.rs /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.19/src/fallback.rs /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.19/src/wrapper.rs
+
+/home/alexmurz/Documents/code/lib/rust/game_engine/shader_compiler/target/debug/deps/libproc_macro2-1b302864f2364734.rlib: /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.19/src/lib.rs /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.19/src/parse.rs /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.19/src/detection.rs /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.19/src/fallback.rs /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.19/src/wrapper.rs
+
+/home/alexmurz/Documents/code/lib/rust/game_engine/shader_compiler/target/debug/deps/proc_macro2-1b302864f2364734.d: /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.19/src/lib.rs /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.19/src/parse.rs /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.19/src/detection.rs /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.19/src/fallback.rs /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.19/src/wrapper.rs
+
+/home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.19/src/lib.rs:
+/home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.19/src/parse.rs:
+/home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.19/src/detection.rs:
+/home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.19/src/fallback.rs:
+/home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.19/src/wrapper.rs:

@@ -1,0 +1,11 @@
+/home/alexmurz/Documents/code/lib/rust/game_engine/shader_compiler/target/debug/deps/generic_array-d223b55f7e10ba36.rmeta: /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/generic-array-0.9.0/src/lib.rs /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/generic-array-0.9.0/src/hex.rs /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/generic-array-0.9.0/src/impls.rs /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/generic-array-0.9.0/src/arr.rs /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/generic-array-0.9.0/src/iter.rs
+
+/home/alexmurz/Documents/code/lib/rust/game_engine/shader_compiler/target/debug/deps/libgeneric_array-d223b55f7e10ba36.rlib: /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/generic-array-0.9.0/src/lib.rs /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/generic-array-0.9.0/src/hex.rs /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/generic-array-0.9.0/src/impls.rs /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/generic-array-0.9.0/src/arr.rs /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/generic-array-0.9.0/src/iter.rs
+
+/home/alexmurz/Documents/code/lib/rust/game_engine/shader_compiler/target/debug/deps/generic_array-d223b55f7e10ba36.d: /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/generic-array-0.9.0/src/lib.rs /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/generic-array-0.9.0/src/hex.rs /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/generic-array-0.9.0/src/impls.rs /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/generic-array-0.9.0/src/arr.rs /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/generic-array-0.9.0/src/iter.rs
+
+/home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/generic-array-0.9.0/src/lib.rs:
+/home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/generic-array-0.9.0/src/hex.rs:
+/home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/generic-array-0.9.0/src/impls.rs:
+/home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/generic-array-0.9.0/src/arr.rs:
+/home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/generic-array-0.9.0/src/iter.rs:

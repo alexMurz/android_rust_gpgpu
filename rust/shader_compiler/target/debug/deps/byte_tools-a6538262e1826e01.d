@@ -1,0 +1,11 @@
+/home/alexmurz/Documents/code/simd_bench/rust/shader_compiler/target/debug/deps/byte_tools-a6538262e1826e01.rmeta: /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/byte-tools-0.2.0/src/lib.rs /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/byte-tools-0.2.0/src/read_single.rs /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/byte-tools-0.2.0/src/write_single.rs /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/byte-tools-0.2.0/src/read_slice.rs /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/byte-tools-0.2.0/src/write_slice.rs
+
+/home/alexmurz/Documents/code/simd_bench/rust/shader_compiler/target/debug/deps/libbyte_tools-a6538262e1826e01.rlib: /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/byte-tools-0.2.0/src/lib.rs /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/byte-tools-0.2.0/src/read_single.rs /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/byte-tools-0.2.0/src/write_single.rs /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/byte-tools-0.2.0/src/read_slice.rs /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/byte-tools-0.2.0/src/write_slice.rs
+
+/home/alexmurz/Documents/code/simd_bench/rust/shader_compiler/target/debug/deps/byte_tools-a6538262e1826e01.d: /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/byte-tools-0.2.0/src/lib.rs /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/byte-tools-0.2.0/src/read_single.rs /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/byte-tools-0.2.0/src/write_single.rs /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/byte-tools-0.2.0/src/read_slice.rs /home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/byte-tools-0.2.0/src/write_slice.rs
+
+/home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/byte-tools-0.2.0/src/lib.rs:
+/home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/byte-tools-0.2.0/src/read_single.rs:
+/home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/byte-tools-0.2.0/src/write_single.rs:
+/home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/byte-tools-0.2.0/src/read_slice.rs:
+/home/alexmurz/.cargo/registry/src/github.com-1ecc6299db9ec823/byte-tools-0.2.0/src/write_slice.rs:
